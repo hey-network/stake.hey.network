@@ -1,0 +1,67 @@
+button[class*="super-btn"] {
+    &:focus {
+        outline: 0;
+    }
+    cursor: pointer;
+    &.blue {
+        background-image: linear-gradient(-45deg, $BluLight, $BluDark);
+        color: #FFF;
+    }
+    &.grey {
+        background-image: linear-gradient(-45deg, #777892, #565770);
+        color: #FFFFFF;
+    }
+    &.white {
+        background-image: linear-gradient(-45deg, #FFF, #EFEFEF);
+        color: #555;
+        border: 1px solid #EED;
+    }
+}
+button.super-btn-rounded {
+    font-weight: 500;
+    font-family: Gilroy;
+    font-size: 22px*$R;
+    letter-spacing: 1px;
+    border-radius: 200px;
+    padding: 26px 50px 20px;
+    -webkit-box-shadow: 0 6px 40px 0px rgba(72,83,240,0.3);
+    -moz-box-shadow: 0 6px 40px 0px rgba(72,83,240,0.3);
+    box-shadow: 0 6px 40px 0px rgba(72,83,240,0.3);
+}
+button.super-btn-square {
+    font-weight: 500;
+    font-family: Gilroy;
+    font-size: 24px*$R;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    padding: 20px 40px;
+}
+
+i{
+  content: "";
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  &.i-btn-arrow {
+    text-transform: uppercase;
+      width: 16px;
+      height: 13px;
+      background-image: url($assets + "button_arrow.png");
+      background-size: 90%;
+      margin-left: 10px;
+  }
+  &.i-apple {
+      width: 21px;
+      height: 23px;
+      background-image: url($assets + "apple.png");
+      background-size: 100%;
+      margin-right: 10px;
+  }
+  &.i-google {
+      width: 19px;
+      height: 21px;
+      background-image: url($assets + "google.png");
+      background-size: 100%;
+      margin-right: 10px;
+  }
+}

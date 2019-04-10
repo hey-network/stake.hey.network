@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>Hey.network Plasmachain Validator</title>
+    <meta name="description" content="Stake with us, make the LOOM Plasmachain more secure and get some returns on your LOOM">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular-route.min.js"></script>
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+    <script src="views/home/home.js"></script>
+</head>
+
+<body>
+    <div ng-view></div>
+    <!-- <script async src="//www.googletagmanager.com/gtag/js?id=UA-96830923-1"></script> -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-96830923-1');
+    </script>
+    <!-- <script src="//widget.get-hey.com/bundle.js" data-key="z4dfjxDy0wWHkrkV8pRrljAQJ67AfgA5"></script> -->
+</body>
+
+</html>

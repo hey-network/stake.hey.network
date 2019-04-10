@@ -1,0 +1,22 @@
+{
+  "name": "hey-stake",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "npm run i18n && jshint --verbose dist/i18n.js",
+    "start": "clear && node index.js",
+    "i18n": "./scripts/i18n.sh",
+    "cpS3":"aws s3 cp dist/ s3://stake.hey.network --recursive --profile hey",
+    "invalidateCloudfront":"aws cloudfront create-invalidation --distribution-id E3PS07XWMIYBFT --paths '/*' --profile hey",
+    "preproduction": "npm run i18n",
+    "production": "npm run cpS3",
+    "postproduction": "npm run invalidateCloudfront"
+  },
+  "author": "hey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://hey.network"
+  },
+  "homepage": "https://hey.network",
+  "dependencies": {}
+}

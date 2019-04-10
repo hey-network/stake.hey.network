@@ -1,0 +1,96 @@
+//----------
+// General variable
+//----------
+$font: "Eina","Hey", "Nitti Grotesk", "Proxima Nova", "Roboto", "Helvetica", sans-serif;
+$assets: "../assets/";
+
+$transition_time:300ms;
+$default_anim:ease;
+$main_width:100%;
+$max_width:1280px;
+
+$side_menu_width:65%;
+$loading_time:1s;
+$apply_resize: true;
+$resize_s: 0.85;
+
+// BREAKPOINTS
+$breakpoint_phone:700px;
+$breakpoint_tablet:600px;
+$breakpoint_medium:800px;
+$breakpoint_big:1280px;
+$breakpoint_desktop:1280px;
+$breakpoint_xt:500px;
+
+$R: 0.8;
+
+// Round a number to specified digits.
+//
+// @param  {Number} $number A number to round
+// @param  {Number} [$digits:0] Digits to output
+// @param  {String} [$mode:round] (round|ceil|floor) How to round a number
+// @return {Number} A rounded number
+// @example
+//     decimal-round(0.333)    => 0
+//     decimal-round(0.333, 1) => 0.3
+//     decimal-round(0.333, 2) => 0.33
+//     decimal-round(0.666)    => 1
+//     decimal-round(0.666, 1) => 0.7
+//     decimal-round(0.666, 2) => 0.67
+//
+@function decimal-round ($number, $digits: 0, $mode: round) {
+    $n: 1; // $number must be a number
+    @if type-of($number) !=number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    } // $digits must be a unitless number
+    @if type-of($digits) !=number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    }
+    @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+    @if $mode==round {
+        @return round($number * $n) / $n;
+    }
+    @else if $mode==ceil {
+        @return ceil($number * $n) / $n;
+    }
+    @else if $mode==floor {
+        @return floor($number * $n) / $n;
+    }
+    @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+
+@function dp($var_value, $ratio: $resize_s) {
+    @if $apply_resize==true {
+        @return decimal-round($var_value * $ratio, 1);
+    }
+    @else {
+        @return $var_value;
+    }
+}
+
+//font-sizes
+$font_xs:12px;
+$font_s:16px;
+$font_sm:18px;
+$font_m:20px;
+$font_l:24px;
+$font_xl:32px;
+$font_xxl:42px;
+//custom ui
+$header_footer_shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px 0px;
+$border-button-width:4px;
+$border-radius:5px;
+$selected-width:6px;
+$menu-height:50px;
+$header_height: 48px;

@@ -1,0 +1,87 @@
+<div class="hey-home-wrapper">
+    <div class="hey-home">
+        <nav>
+            <div class="left">
+                <img src="assets/logo.png" alt="logo">
+            </div>
+            <!-- <div class="browse">
+        <ul>
+          <li class="active">Home</li>
+          <li>Contact</li>
+        </ul>
+      </div> -->
+            <div class="right">
+                <button type="button" name="button" class="super-btn-rounded white" ng-click="switchMOD('Language', true)">Language/言語</button>
+                <button type="button" id="whatishey" name="button" class="super-btn-rounded white" nb-txt="home.whatishey" ng-click="openTab(LINKS.hey)">What is Hey?</button>
+                <button type="button" name="button" class="super-btn-rounded blue" nb-txt="home.start" ng-click="openTab(LINKS.validator)">Start<i class="i-btn-arrow"></i></button>
+            </div>
+        </nav>
+        <header>
+            <div class="header-content">
+                <!-- <img src="assets/loom-coin.png" alt="coin"> -->
+                <div class="header-txt">
+                    <h1 nb-txt="home.title">Delegate <span class="grad">LOOM</span> and <span class="grad">earn rewards</span></h1>
+                    <p nb-txt="home.nfo">Nothing is easier, it only takes 3 minutes, make profit out of your LOOMs while you can't do anything with them so far.</p>
+                    <div class="buttons">
+                        <button type="button" name="button" class="super-btn-square grey" ng-click="openTab(LINKS.validator)" nb-txt="home.stake">Stake with us!</button>
+                        <button type="button" name="button" class="super-btn-square grey" ng-click="openTab(LINKS.stakeTelegram)" nb-txt="home.telegram">Join us on Telegram</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="banner-join-chat">
+            <div class="banner-content" nb-txt="home.join" ng-click="openTab(LINKS.validator)">
+                Hey Loomers ! We, at <span class="fluo">#Hey</span>, are almost ready to give you tons of information about <span class="fluo">#Loom</span>, <span class="fluo">#Staking</span> and <span class="fluo">#Rewards</span>. Put your Looms at
+                use and make some returns!
+            </div>
+        </div>
+    </div>
+    <section class="hey-footer">
+        <div class="hey-footer-wrapper">
+            <div class="col-1">
+                <img src="assets/logo_white.png" alt="Hey logo">
+                <span nb-txt="home.footer.copyright">Copyright</span> © Hey-Group S.A./N.V. <br>
+                {{ currentDate | date:'yyyy' }}, 2017. <span nb-txt="home.footer.rights">All Rights Reserved.</span>
+                <div class="social">
+                    <a ng-href="{{LINKS.stakeTelegram}}" target="_blank" class="telegram"></a>
+                    <a ng-href="{{LINKS.reddit}}" target="_blank" class="reddit"></a>
+                    <a ng-href="{{LINKS.twitter}}" target="_blank" class="twitter"></a>
+                    <a ng-href="{{LINKS.facebook}}" target="_blank" class="facebook"></a>
+                </div>
+            </div>
+            <div class="col-2">
+                <h3 nb-txt="home.footer.aboutUs">About us</h3>
+                <ul>
+                    <li><a ng-href="{{LINKS.manifesto}}" target="_blank" nb-txt="home.footer.manifesto">Manifesto</a></li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <h3 nb-txt="home.footer.support">Support</h3>
+                <ul>
+                    <li><a ng-href="{{LINKS.stakeTelegram}}" target="_blank" nb-txt="home.footer.contactUs">Contact us</a></li>
+                    <li><a ng-href="{{LINKS.stakingGuide}}" target="_blank" nb-txt="home.footer.stakingGuide">Staking Guide</a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <h3>Hey</h3>
+                <ul>
+                    <li><a ng-href="{{LINKS.hey}}" target="_blank" nb-txt="home.footer.website">Hey Website</a></li>
+                    <li><a ng-href="{{LINKS.dashboard}}" target="_blank" nb-txt="home.footer.dashboard">Dashboard</a></li>
+                    <li><a ng-href="{{LINKS.appleStore}}" target="_blank">App Store</a></li>
+                    <li><a ng-href="{{LINKS.googlePlay}}" target="_blank">Google Play</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="mod-language" ng-if="MODLanguage" ng-click="switchMOD('Language')">
+    <div class="bck">
+    </div>
+    <div class="ctn">
+        <ul>
+            <li ng-repeat="(_code, _lang) in LANGUAGES_LIST" ng-click="changeLanguage(_code)">{{ _lang }}</li>
+            <br>
+            <li class="close">CLOSE</li>
+        </ul>
+    </div>
+</div>
